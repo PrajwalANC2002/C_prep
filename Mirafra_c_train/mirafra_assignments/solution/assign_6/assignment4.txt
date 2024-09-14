@@ -1,0 +1,28 @@
+1. Implement and test stack of integers using array. It should support the following interface.
+
+void push(int x); // push an integer x onto the stack
+int pop(); // remove the top element from the stack and return it
+int is_empty(); // return 1 if the stack is empty, 0 otherwise
+int is_full(); // return 1 if the stack is full, 0 otherwise
+void print(); // print the elements of the stack
+
+Test the stack implementation by pushing 10 integers onto the stack, then popping 5 integers from the stack, 
+and then pushing 5 more integers onto the stack. Print the elements of the stack after each operation.
+
+
+2. print_histogram_of_integers
+
+Write a function print_histogram_of_integers that takes an array of integers and its size as input and prints a histogram of the integer frequencies. 
+You can assume that that there will be at the most 20 unique integers in the array.
+
+Example:
+
+int arrray = {7, 19, 3, 7, 3, 7, 3, 7, 19, 7, 3, 19, 19, 19, 19, 19, 7, 7, 7, 7};
+
+print_histogram_of_integers(arrray, 20);
+
+should print:
+
+7: *********
+19: *******
+3: ****

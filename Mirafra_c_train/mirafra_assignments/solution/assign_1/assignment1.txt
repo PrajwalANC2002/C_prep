@@ -1,0 +1,47 @@
+1. Hello World
+
+Write a function that takes no arguments and prints the string "Hello, World!".
+
+2. Hello person
+
+Write a function that takes a string name as an argument and prints the string "Hello, <name>!". 
+
+3. Hello/Bye person
+
+Write a function that takes a string name as an argument and prints the string "Hello, <name>!" 
+in one line and "Bye, <name>!" in the next line.
+
+4. Extract fields from a encoded integer
+
+An instruction is encoded with the following format:
+
+opcode: 4 bits
+output reg: 4 bits
+operand 1 reg: 4 bits
+operand 2 reg: 4 bits
+memory address: 16 bits
+
+Write a function that takes an instruction (int) as an argument and prints various fields in hex. 
+The output should look like:
+OPCODE: 0x3
+OUTPUT REG: 0x4
+OPERAND 1 REG: 0x5
+OPERAND 2 REG: 0x6
+MEMORY ADDRESS: 0x1234
+
+5. print_case
+
+Write a function that takes a character as an argument and prints "lower case" if the character
+is a lower case letter and "upper case" if the character is an upper case letter. If the character
+is not a letter, the function should print "not a letter".
+
+6. to_upper
+
+Write a function to_upper to convert lower case letter to upper case letter. If the input 
+is not a lower case letter, the function should return the input as is.
+
+7. fizzbuzz
+
+Write a function which takes a number and goes over numbers from 1 to 'n' and prints "Fizz" if 
+the number is divisible by 3, "Buzz" if the number is divisible by 5, "FizzBuzz" if the number 
+is divisible by 3 and 5, and the number itself otherwise.

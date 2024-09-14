@@ -1,0 +1,55 @@
+1. Write a function which takes a list of integers and its length and returns the sum of all the prime numbers in the list.
+
+Example:
+
+int x[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+int s = sum_primes(x, 10)
+
+s == 17
+
+2. Write a function which takes an unsigned integer and returns the sum of all the factors of the number.
+
+Example:
+
+int s = sum_factors(10)
+s == 18   // 1 + 2 + 5 + 10
+
+3. Write a function which takes an unsigned integer and returns the sum of all the digits in the number.
+
+Example:
+
+int s = sum_digits(1278)
+s == 18   // 1 + 2 + 7 + 8
+
+Hint: Use the % and / operators to extract digits from the number.
+
+4. Write a function which takes an array of strings, length of the array and draws a histogram of the frequency of the characters in the strings.
+
+Example:
+
+char *x[3] = {"hello", "world", "hello"}
+draw_histogram(x, 3)
+
+h: **
+e: **
+l: *****
+o: ***
+w: *
+r: *
+d: *
+
+Note that we the histogram is case sensitive so 'h' and 'H' count as different characters.
+
+5. Write a function which takes a string and returns the number of words in the string. Assume 
+that there is always one space separating the words and there are no spaces at the begining 
+or the end of the string.
+
+Example:
+
+int s = count_words("hello world, how are you?")
+s == 5
+
+Empty string should return a count of 0.
+
+int s = count_words("")
+s == 0

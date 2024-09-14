@@ -1,0 +1,23 @@
+1. Write is_palindrome function which takes an unsigned int data and returns true if the binary representation of 'data' is a palindrome. Else returns false. Use the following structure:
+
+int is_palindrome(unsigned int data) {
+   get_binary_representation(data, bin_str);
+   reverse(bin_str, rev_str);
+   if (strcmp(bin_str, rev_str) == 0) {
+      return 1;
+   }
+}
+
+2. Write is_palindrome_str function which takes a string and returns true if the string is a palindrome. Else returns false. Use a structure similar to above.
+
+3. Write a simulation program to estimate the value of pi. You are given a fn. my_rand() which returns a float between -1 and 1. Flow of the program:
+
+- Ask user for number of trials
+- For each trial generate a random point (x, y) using my_rand()
+- Check if the point lies inside the circle. Use the function is_inside_circle we wrote earlier
+- Count the number of points inside the circle
+- Estimate the value of pi using the formula: 4 * (number of points inside the circle) / (total number of trials)
+- Print the percentage error in the estimate of pi
+
+How many trials does it take get within 25%?
+How many trials does it take get within 10%?

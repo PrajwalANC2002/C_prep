@@ -1,0 +1,278 @@
+question 1)
+#include<stdio.h>
+int str_len(char *a)
+{
+  int count=0,i=0;
+  while(a[i]!='\0')
+  {
+    count++;
+    i++;
+  }
+  return count;
+}
+int main()
+{
+  char a[100];
+  printf("please enter the string\n");
+  scanf("%[^\n]",a);
+  printf("the length of the string is %d\n",str_len(a));
+  return 0;
+
+}
+
+output:
+prajwal@DESKTOP-8U4IRQ2:~/assignments/assignment5$ ./assign_1
+please enter the string
+Prajwal
+the length of the string is 7
+
+question 2)
+
+#include<stdio.h>
+#include<string.h>
+void to_upper(char *name)
+{
+  for(int i=0;i<strlen(name);i++){
+    if(name[i] >= 'a' && name[i] <= 'z')
+    {
+      name[i]=name[i]-32;
+    }
+  }
+  printf("Hello %s!\n",name);
+}
+int main()
+{
+  char name[100];
+  printf("enter the string to capitalize\n");
+  scanf("%s",name);
+  to_upper(name);
+  return 0;
+}
+output:
+enter the string to capitalize
+pRajwal
+Hello PRAJWAL!
+
+question 3)
+#include<stdio.h>
+#include<string.h>
+int is_substring(char *str,char *sub_str)
+{
+  int flag=0,count=0;
+  for(int i=0;i<strlen(str);i++)
+  {
+    for(int j=0;j<strlen(sub_str);j++)
+    {
+      if(str[i+j] == sub_str[j])
+      {
+        count++;
+      }
+      else
+      {
+        break;
+      }
+      if(count == strlen(sub_str))
+      {
+        return flag=1;
+      }
+    }
+  }
+  return flag;
+}
+int main()
+{
+  char sub_str[100],str[100];
+  printf("enter the string\n");
+  scanf("%[^\n]",str);
+  printf("enter the sub_string\n");
+  scanf("%s",sub_str);
+  printf("%d\n",is_substring(str,sub_str));
+}
+
+output:
+
+prajwal@DESKTOP-8U4IRQ2:~/assignments/assignment5$ ./assign_3
+enter the string
+he is a good programmer
+enter the sub_string
+bad
+0
+prajwal@DESKTOP-8U4IRQ2:~/assignments/assignment5$ ./assign_3
+enter the string
+he is a good programmer
+enter the sub_string
+good
+1
+
+question 4)
+
+#include<stdio.h>
+#include<string.h>
+void to_upper(char *str)
+{
+  for(int i=0;i<strlen(str);i++){
+    if(str[i] >= 'a' && str[i] <= 'z')
+    {
+      str[i]=str[i]-32;
+    }
+  }
+}
+void histogram(char *str)
+{
+  to_upper(str);
+  int count[200]={0};
+  for(int i=0;i<strlen(str);i++)
+  {
+    if(str[i] >= 'A' && str[i] <= 'Z')
+    {
+      count[str[i]]++;
+    }
+  }
+  for(int i='A';i<='Z';i++)
+  {
+    printf("%c =",i);
+    for(int j=0;j<count[i];j++)
+    {
+      printf("*");
+    }
+    printf("\n");
+  }
+}
+int main()
+{
+  char str[100];
+  printf("enter the string\n");
+  scanf("%s",str);
+  histogram(str);
+  return 0;
+}
+
+output:
+
+prajwal@DESKTOP-8U4IRQ2:~/assignments/assignment5$ ./assign_4
+enter the string
+PrajWAl
+A =**
+B =
+C =
+D =
+E =
+F =
+G =
+H =
+I =
+J =*
+K =
+L =*
+M =
+N =
+O =
+P =*
+Q =
+R =*
+S =
+T =
+U =
+V =
+W =*
+X =
+Y =
+Z =
+
+question 5)
+
+#include<stdio.h>
+#include<stdlib.h>
+int is_inside_circle(float cx,float cy,float px,float py,float rad);
+float my_rand();
+int est_pie(int tr);
+int main()
+{
+  int tr_arr[10];
+  printf("Enter the 10 number of trials\n");
+for(int i=0;i<10;i++)
+{
+  scanf("%d",&tr_arr[i]);
+}
+ hist(tr_arr);
+ }
+int est_pie(int tr)
+{
+  float count=0;
+  int temp=tr;
+  while(temp>0)
+  {
+   my_rand(); 
+    if(is_inside_circle(0,0,my_rand(),my_rand(),1)) count++;
+    temp--;
+  }
+  int value=(4*count)/tr;
+  printf("value of pie=%f\n",value);
+  float a=((value-3.14)/3.14)*100;
+ if(a<0) return -a;
+ else return a;
+
+}
+float my_rand()
+{
+  return -1.0+2*(float)rand()/(float)RAND_MAX;
+}
+int is_inside_circle(float cx,float cy,float px, float py,float rad)
+{
+  return ((cx-px)*(cx-px)+(cy-py)*(cy-py))<rad*rad;
+}
+float num_trials(float error)
+  {
+    float pie=((error*3.14)/100)+3.14;
+    float count=0; 
+    while(1)
+    {
+      my_rand();
+      if(is_inside_circle(0,0,my_rand(),my_rand(),1)) count++;
+    }
+    float tr=(4*count)/pie;
+    return tr;
+  }
+void hist(int *tr_arr)
+{
+  int temp=0;
+for(int i=0;i<10;i++)
+{
+  temp=est_pie(tr_arr[i]);
+  printf("the number of trails:%d ",tr_arr[i]);
+  printf("%f ",tr_arr[i]);
+ for(int j=1;j<=temp;j++)
+ {
+   printf("*");
+ }
+ printf("\n");
+}
+}
+
+
+output:
+prajwal@DESKTOP-8U4IRQ2:~/assignments/assignment5$ ./hist2
+Enter the 10 number of trials
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+the number of trails:1 ***************************
+the number of trails:2 ************************************
+the number of trails:3 ***************************
+the number of trails:4 ****
+the number of trails:5 ****
+the number of trails:6 ************************************
+the number of trails:7 ****
+the number of trails:8 ****
+the number of trails:9 ****
+the number of trails:10 ****
+
+
+

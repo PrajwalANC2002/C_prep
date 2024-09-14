@@ -1,0 +1,323 @@
+question1)
+#include<stdio.h>
+#include<stdlib.h>
+int top=-1;
+#define MAX 10
+int a[MAX];
+int is_empty()
+{
+  if(top == -1)
+  {
+    return 1;
+  }
+  return 0;
+}
+
+int is_full()
+{
+  if(top == MAX -1)
+  {
+    return 1;
+  }
+  return 0;
+}
+
+void push(int x)
+{
+  if(is_full())
+  {
+    printf("the stack is full \n");
+  }
+  else
+  {
+    {
+      printf("please enter the value to enter into stack\n");
+      scanf("%d",&x);
+      top=top+1;
+      a[top]=x;
+    }
+  }
+}
+int pop()
+{
+  int pop_ele;
+  if(is_empty())
+  {
+    return -1;
+  }
+  else
+  {
+    pop_ele=a[top];
+    top=top-1;
+    return pop_ele;
+  }
+}
+void print()
+{
+  if(is_empty())
+  {
+    printf("the stack is empty\n");
+  }
+  else{
+    for(int i=top;i>=0;i--)
+    {
+      printf("%d\n",a[i]);
+    }
+  }
+}
+int main()
+{
+  for(int i=1;i<=10;i++)
+  {
+    push(i);
+    print();
+  }
+  for(int i=1;i<=5;i++)
+  {
+    pop();
+    print();
+  }
+  for(int i=11;i<=15;i++)
+  {
+    push(i);
+    print();
+  }
+ return 0;
+}
+output:
+
+prajwal@DESKTOP-8U4IRQ2:~/assignments/assignment6$ ./assign_1
+please enter the value to enter into stack
+10
+10
+please enter the value to enter into stack
+20
+20
+10
+please enter the value to enter into stack
+30
+30
+20
+10
+please enter the value to enter into stack
+40
+40
+30
+20
+10
+please enter the value to enter into stack
+50
+50
+40
+30
+20
+10
+please enter the value to enter into stack
+60
+60
+50
+40
+30
+20
+10
+please enter the value to enter into stack
+70
+70
+60
+50
+40
+30
+20
+10
+please enter the value to enter into stack
+80
+80
+70
+60
+50
+40
+30
+20
+10
+please enter the value to enter into stack
+90
+90
+80
+70
+60
+50
+40
+30
+20
+10
+please enter the value to enter into stack
+100
+100
+90
+80
+70
+60
+50
+40
+30
+20
+10
+90
+80
+70
+60
+50
+40
+30
+20
+10
+80
+70
+60
+50
+40
+30
+20
+10
+70
+60
+50
+40
+30
+20
+10
+60
+50
+40
+30
+20
+10
+50
+40
+30
+20
+10
+please enter the value to enter into stack
+110
+110
+50
+40
+30
+20
+10
+please enter the value to enter into stack
+120
+120
+110
+50
+40
+30
+20
+10
+please enter the value to enter into stack
+130
+130
+120
+110
+50
+40
+30
+20
+10
+please enter the value to enter into stack
+140
+140
+130
+120
+110
+50
+40
+30
+20
+10
+please enter the value to enter into stack
+150
+150
+140
+130
+120
+110
+50
+40
+30
+20
+10
+
+
+
+question 2)
+#include<stdio.h>
+void hist(int *arr, int n);
+int main()
+{
+  int arr[10];
+  int n=20;
+  printf("enter the 20 elements\n");
+  for(int i=0;i<n;i++)
+  {
+    scanf("%d",&arr[i]);
+  }
+  hist(arr,n);
+}
+void hist(int *arr, int n)
+{
+  int temp_arr[n];
+  int flag=0;
+  int count=1;
+  int k=0;
+  for(int i=0;i<n;i++)
+  {
+    temp_arr[i]=0;
+  }
+  for(int i=0;i<n;i++)
+  {
+    for(int j=0;j<n;j++)
+    {
+      if(arr[i]==temp_arr[j])
+      {
+        flag=0;
+        break;
+      }
+      else flag=1;
+    }
+    if(flag)
+    {
+      temp_arr[k++]=arr[i];
+      for(int j=i+1;j<n;j++)
+      {
+        if(arr[i]==arr[j])
+        {
+          count++;
+        }
+      }
+
+      printf("%d:",arr[i]);
+      for(int i=0;i<count;i++)
+      {
+        printf("*");
+      }
+      printf("\n");
+      count=1;
+    }
+    else continue;
+  }
+}
+
+output :
+enter the 20 elements
+10 20 2 30 2 1 10 30 40 5 60 40 30 20 30 50 40 60 4 1
+10:**
+20:**
+2:**
+30:****
+1:**
+40:***
+5:*
+60:**
+50:*
+4:*

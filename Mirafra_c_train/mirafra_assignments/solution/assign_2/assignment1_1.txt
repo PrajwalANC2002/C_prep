@@ -1,0 +1,19 @@
+1. Write function which takes an int 'n' and returns 1 if it is odd and 0 if it is even.
+
+2. Write a function which takes two int arguments, factor and limit and prints all the numbers which are multiple of factor and are less than limit.
+
+3. Write a function which takes an int 'n' and returns the sum of first 'n' natural numbers. 
+
+4. Write a function which takes an int 'n' and returns the sum of first 'n' odd numbers.
+
+5. Write a function which takes an int 'n' and returns the sum of first 'n' even numbers.
+
+6. Write a function which takes an int 'n' and an int 'factor' and returns the sum of first 'n' numbers which are multiple of 'factor'.
+
+7. Use the function in 6 to rewrite the function in 3 and 5.
+
+8. Write a function which takes an int 'n' and returns the factorial of 'n'.
+
+9. Write a function which takes an int 'n', an int 'lower' and an int 'uppper'. It returns 0 if 'n' is not in the range [lower, upper] and 1 if 'n' is in the range [lower, upper].
+
+10. Write a function which takes an int 'n' returns the absolute value of 'n'.

@@ -1,0 +1,155 @@
+question 1)
+#include<stdio.h>
+#include<string.h>
+void reverse(char *str,char *rev_str)
+{
+  int size=strlen(str);
+  int i=size-1,j=0;
+  while(i>=0)
+  {
+    rev_str[j]=str[i];
+    i--;
+    j++;
+  }
+  rev_str[j]='\0';
+}
+int is_palindrome(char *str)
+{
+  char rev_str[100];
+  reverse(str,rev_str);
+  if(strcmp(str,rev_str) == 0)
+  {
+    return 1;
+  }
+  else 
+  {
+    return 0;
+  }
+}
+int main()
+{
+  char str[100];
+  printf("enter the string for palindrome check\n");
+  scanf("%s",str);
+  printf("%d\n",is_palindrome(str));
+  return 0;
+}
+output:
+enter the string for palindrome check
+ollo
+1
+
+enter the string for palindrome check
+pwiueu
+0
+
+question 2)
+#include<stdio.h>
+#include<string.h>
+void get_binary_representation(unsigned int data,char *bin_str)
+{
+  int i=0;
+  while(data > 0)
+  {
+    if(data % 2 ==1 )
+    {
+      bin_str[i++]='1';
+    }
+    else 
+    {
+      bin_str[i++]='0';
+    }
+    data=data/2;
+  }
+  bin_str[i]='\0';
+}
+void reverse(char *bin_str,char *rev_str)
+{
+  int size=strlen(bin_str);
+  int i=size-1,j=0;
+  while(i>=0)
+  {
+    rev_str[j]=bin_str[i];
+    i--;
+    j++;
+  }
+  rev_str[j]='\0';
+}
+int is_palindrome(unsigned int data)
+{
+
+  char rev_str[100];
+  char bin_str[100];
+  get_binary_representation(data,bin_str);
+  reverse(bin_str,rev_str);
+  if(strcmp(bin_str,rev_str) == 0)
+  {
+    return 1;
+  }
+  else 
+  {
+    return 0;
+  }
+}
+int main()
+{
+  unsigned int data;
+  printf("enter the data in decimal form for palindrome check\n");
+  scanf("%u",&data);
+  printf("%d\n",is_palindrome(data));
+  return 0;
+}
+
+output:
+
+prajwal@LAPTOP-5FUF93NL:~/assignments/assignment3$ ./assign_2
+enter the data in decimal form for palindrome check
+9
+1
+prajwal@LAPTOP-5FUF93NL:~/assignments/assignment3$ ./assign_2
+enter the data in decimal form for palindrome check
+10
+0
+
+question 3)
+#include<stdio.h>
+#include <stdlib.h>
+float my_rand() 
+{
+  return -1.0 + 2 * (float)rand() / (float)RAND_MAX;
+}
+int check_point_within_circle(float cx,float cy,float px, float py,float rad)
+{
+  return ((cx-px)*(cx-px)+(cy-py)*(cy-py))<rad*rad;
+}
+float percentage_err_pi(float n)
+{
+ float count=0;
+  float pi;
+  int temp=n;
+  while(temp>0)
+  {
+    if(check_point_within_circle(0,0,my_rand(),my_rand(),1))
+    {
+      count++;
+    }
+    temp--;
+  }
+  pi=(4*count)/n;
+  printf("%f\n",pi);
+  float a=((pi-3.14)/3.14)*100;
+  return a;
+}
+int main()
+{
+  int n;
+  printf("please enter the number of trials\n");
+  scanf("%d",&n);
+  printf("the percentage error = %f\n",percentage_err_pi(n));
+  return 0;
+}
+output:
+please enter the number of trials
+5
+3.200000
+the percentage error = 1.910830

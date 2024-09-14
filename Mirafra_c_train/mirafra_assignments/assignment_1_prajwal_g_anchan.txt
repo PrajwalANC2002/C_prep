@@ -1,0 +1,210 @@
+question 1)
+#include "stdio.h"
+void print(){
+        printf("Hello, World!\n");
+}
+int main(){
+        print();
+        return 0;
+}
+output
+Hello World!
+
+question 2)
+
+#include "stdio.h"
+#include "string.h"
+void print(char name[20]){
+        printf("Hello, %s!\n",name);
+}
+int main(){
+        char name[20];
+        printf("enter your name \n");
+        scanf("%s",name);
+        print(name);
+        return 0;
+
+}
+output:
+enter your name
+prajwal
+Hello, prajwal!
+
+question 3)
+
+#include "stdio.h"
+#include "string.h"
+void print(char name[20]){
+        printf("Hello, %s!\nBye, %s!\n",name,name);
+}
+int main(){
+        char name[20];
+        printf("enter your name \n");
+        scanf("%s",name);
+        print(name);
+        return 0;
+}
+output:
+enter your name
+prajwal
+Hello, prajwal!
+Bye, prajwal!
+ 
+question 4)
+
+#include "stdio.h"
+void decode(int n)
+{
+
+        int n1 = (n >> 28) & 0xf;
+        int n2 = (n >> 24) & 0xf;
+        int n3 = (n >> 20) & 0xf;
+        int n4 = (n >> 16) & 0xf;
+        int n5 = n & 0xffff;
+        printf("OPCODE : 0x%X \n",n1);
+        printf("Output REG : 0x%X \n",n2);
+        printf("Operand 1 REG : 0x%X \n",n3);
+        printf("Operand 2 REG : 0x%X \n",n4);
+        printf("Memory address : 0x%X \n",n5);
+}
+
+
+int main()
+{
+        int n;
+        printf("Please enter instruction \n");
+        scanf("%X",&n);
+        decode(n);
+        return 0;
+}
+output:
+Please enter instruction
+0x34561234
+OPCODE : 0x3
+Output REG : 0x4
+Operand 1 REG : 0x5
+Operand 2 REG : 0x6
+Memory address : 0x1234
+
+question 5)
+
+#include "stdio.h"
+char print_case(char c)
+{
+        if(c >= 65 && c <= 90)
+        {
+                printf("The character entered %c is in uppercase\n",c);
+        }
+        else if(c >=97 && c<=122)
+        {
+                printf("The character entered %c is in lowercase\n",c);
+        }
+        else
+        {
+                printf("The character %c is not a letter\n",c);
+        }
+}
+int main()
+{
+        char c;
+        printf("please enter a character\n");
+        scanf("%c",&c);
+        print_case(c);
+        return 0;
+}
+output:
+please enter a character
+A
+The character entered A is in uppercase
+please enter a character
+z
+The character entered A is in lowercase
+please enter a character
+5
+The character 5 is not a letter
+
+question 6)
+
+#include "stdio.h"
+char to_upper(char c)
+{
+        if(c >=97 && c <= 122)
+        {
+                c=c-32;
+                printf("The upper case letter is %c \n",c);
+        }
+        else
+        {
+                printf("the input is %c \n",c);
+        }
+}
+int main()
+{
+        char c;
+        printf("Please enter a letter \n");
+        scanf("%c",&c);
+        to_upper(c);
+        return 0;
+}
+output:
+Please enter a letter
+k
+The upper case letter is K
+
+Please enter a letter
+K
+the input is K
+
+question7)
+
+#include "stdio.h"
+int fizzbuzz(int n)
+{
+        for(int i=1; i<=n; i++)
+        {
+                if(i % 3 == 0)
+                {
+                        printf("Fizz \n");
+                }
+                else if(i % 5 == 0)
+                {
+                        printf("Buzz \n");
+                }
+                else if( i % 3 == 0 && i % 5 == 0)
+                {
+                        printf("FizzBuzz \n");
+                }
+                else
+                {
+                        printf("%d \n",n);
+                }
+        }
+}
+
+int main(){
+        int n;
+        printf("Please enter your number \n");
+        scanf("%d",&n);
+        fizzbuzz(n);
+        return 0;
+}
+
+output:
+
+Please enter your number
+15
+15
+15
+Fizz
+15
+Buzz
+Fizz
+15
+15
+Fizz
+Buzz
+15
+Fizz
+15
+15
+Fizz

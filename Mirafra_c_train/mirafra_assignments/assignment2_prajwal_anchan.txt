@@ -1,0 +1,265 @@
+question 1)
+#include "stdio.h"
+int oddeven(int n)
+{
+  return n % 2 != 0  ;
+}
+int main()
+{
+  int n;
+  printf("enter the number\n");
+  scanf("%d",&n);
+  printf("%d\n",oddeven(n));
+  return 0;
+}
+
+output :
+enter the number
+7
+1
+enter the number
+8
+0
+
+question 2)
+#include "stdio.h"
+void disp(int fact,int limit)
+{
+  for(int i = 1; i < limit; i++)
+  {
+    if( i % fact == 0) printf("%d\n",i);
+  }
+}
+int main()
+{
+  int fact,limit;
+  printf("please enter the factor and limit\n");
+  scanf("%d",&fact);
+  scanf("%d",&limit);
+  disp(fact,limit);
+  return 0;
+}
+
+output :
+please enter the factor and limit
+2
+40
+2
+4
+6
+8
+10
+12
+14
+16
+18
+20
+22
+24
+26
+28
+30
+32
+34
+36
+38
+
+question 3)
+
+#include "stdio.h"
+int sum_of_nat(int n)
+{
+  return (n * (n+1))/2;
+}
+int main()
+{
+  int n;
+  printf("please enter the nth natural number\n");
+  scanf("%d",&n);
+  printf("the sum of first %d natural number is %d\n",n,sum_of_nat(n));
+  return 0;
+}
+
+output:
+please enter the nth natural number
+5
+the sum of first 5 natural number is 15
+
+question 4)
+
+#include "stdio.h"
+int odd(int n)
+{
+  return n * n;
+}
+int main(){
+  int n;
+  printf("first odd natural number\n");
+  scanf("%d",&n);
+  printf("the sum of first %d odd natural number is %d \n",n,odd(n));
+  return 0;
+
+}
+
+output :
+first odd natural number
+5
+the sum of first 5 odd natural number is 25
+
+question 5)
+#include "stdio.h"
+int even(int n)
+{
+  return n *(n+1);
+}
+int main(){
+  int n;
+  printf("enter the nth value \n");
+  scanf("%d",&n);
+  printf("%d\n",even(n));
+  return 0;
+}
+output:
+enter the nth value
+7
+56
+
+question 6)
+#include "stdio.h"
+int multfact(int n,int factor)
+{
+  int sum=0;
+  for(int i=1;i<=n;i++)
+  {
+    sum = sum + factor*i;
+  }
+  return sum;
+}
+int main()
+{
+int n,factor;
+printf("enter the value for n and factor\n");
+scanf("%d",&n);
+scanf("%d",&factor);
+printf("%d",multfact(n,factor));
+return 0;
+}
+
+output:
+enter the value for n and factor
+4
+2
+20
+
+question 7)
+#include "stdio.h"
+int multfact(int n,int factor)
+{
+  int sum=0;
+  for(int i=1;i<=n;i++)
+  {
+    sum = sum + factor*i;
+  }
+  return sum;
+}
+int sumofnatural(int n)
+{
+  return multfact(n,1);
+}
+int sumofevennatural(int n)
+{
+  return multfact(n,2);
+}
+int main()
+{
+  int n;
+  printf("enter the value for n \n");
+  scanf("%d",&n);
+  printf("the sum of %d natural numbers is %d \n",n,sumofnatural(n));
+  printf("the sum of %d even natural numbers is %d \n",n,sumofevennatural(n));
+  return 0;
+}
+
+output:
+enter the value for n
+5
+the sum of 5 natural numbers is 15
+the sum of 5 even natural numbers is 30
+
+question 8)
+#include "stdio.h"
+int factorial(int n)
+{
+  int fact = 1; 
+  for(int i=2;i<=n;i++){
+    fact = fact*i;
+  }
+  return  fact;
+}
+int main()
+{
+int n;
+printf("enter the nth value\n");
+scanf("%d",&n);
+printf("%d\n",factorial(n));
+return 0;
+}
+
+output:
+
+5
+120
+
+question 9)
+#include "stdio.h"
+int search(int n,int lower,int upper)
+{
+  return n > lower && n < upper ;
+}
+int main(){
+  int n,lower,upper;
+  printf("enter the value for you want to search for \n");
+  scanf("%d",&n);
+  printf("enter the lower and upper limit\n");
+  scanf("%d",&lower);
+  scanf("%d",&upper);
+  printf("%d\n",search(n,lower,upper));
+  return 0;
+}
+output:
+enter the value for you want to search for
+2
+enter the lower and upper limit
+3
+5
+0
+
+enter the value for you want to search for
+2
+enter the lower and upper limit
+1
+5
+1
+
+question 10)
+#include "stdio.h"
+int absolute(int n)
+{
+  if(n<0) return -n;
+  else return n;
+}
+int main(){
+  int n;
+  printf("enter the value for n\n");
+  scanf("%d",&n);
+  printf("%d\n",absolute(n));
+}
+output:
+enter the value for n
+-5
+5
+enter the value for n
+5
+5
+
+

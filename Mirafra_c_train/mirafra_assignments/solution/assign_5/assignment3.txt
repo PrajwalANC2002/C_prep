@@ -1,0 +1,24 @@
+1. str_len
+
+Write a function str_len that takes a string as an argument and returns the length of the string.
+
+2. Hello Person
+
+Write a function that takes a string name as an argument and prints the string "Hello, <name>!". 
+Name should be capitalized. For now we will assume that name has only one word. Use to_upper fn. 
+that you wrote above. 
+
+4. is_substring
+
+Write a function that takes two strings and returns a 0/1 indicating whether or not the first 
+string is a substring of the second.
+
+6. Histogram of character frequencies
+
+Write a function that takes a string and prints a histogram of the character frequencies in the 
+string. Treat upper and lower case characters as the same character.
+
+7. Bar chart of percentage error in pi estimation
+
+Extend your pi estimation program to print a bar chart of the percentage error in the estimate
+of pi for every 10 trials. Use the * character to represent each 1% error.

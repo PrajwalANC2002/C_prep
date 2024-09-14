@@ -1,0 +1,60 @@
+1. first_n_odd_numbers
+
+Write a function that takes an integer n and prints the the first n odd numbers.
+
+2. is_prime
+
+Write a function that takes an integer and returns a 0/1 indicating whether or not it is prime.
+
+3. n_primes
+
+Write a function that takes an integer n and prints the the first n prime numbers. Use the is_prime
+function you wrote earlier.
+
+4. n'th prime
+
+Write a function that takes an integer n and returns the n'th prime number. Use the is_prime 
+function you wrote earlier.
+
+5. is_palindrome on int
+
+Write a function that takes an integer and returns a 0/1 indicating whether or not it's binary 
+reprsentation is a palindrome.
+
+6. count_ones in an int
+
+Write a function that takes an integer and returns the number of 1's in its binary representation.
+
+7. get_crc
+
+Write a function that takes an int fills the MSB with the checksum of its 31 LSB's.
+
+8. check_crc
+
+Write a function that takes an int and returns a 0/1 indicating whether or checksum 
+is correctly stored in the MSB.
+
+9. print_right_triangle
+
+Write a function that takes a number n and prints a triangle of height n. For example, if n is 3,
+the function should print:
+
+*
+**
+***
+
+10. print_isoscles_triangle
+
+Write a function that takes a number n and prints an isosceles triangle of height n. For example,
+if n is 3, the function should print:
+
+*
+**
+***
+**
+*
+
+11. keep_reading_till_exit
+
+Write a program that keeps reading from the user until the user enters the word "exit". 
+Then it ends. Use a do while loop. Lookup strcmp to compare strings.
